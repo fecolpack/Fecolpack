@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FECOLPACK | Empaques que venden</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;}
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 60px;background:#000;position:sticky;top:0;z-index:1000;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo img{height:45px;}
+.logo span{color:#ff5a3c;font-weight:700;font-size:20px;}
+nav a{margin:0 15px;text-decoration:none;color:white;font-weight:500;}
+.hero{height:95vh;background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('producto1.png') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:20px;}
+.hero h1{font-size:58px;font-weight:700;max-width:900px;}
+.hero p{font-size:22px;margin-top:20px;color:#ddd;}
+.btn{background:#ff5a3c;color:white;padding:16px 32px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:30px;font-weight:600;font-size:18px;}
+.whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+.section{padding:80px 60px;max-width:1200px;margin:auto;}
+.section h2{font-size:36px;margin-bottom:20px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:40px;}
+.card{padding:30px;border-radius:10px;background:white;box-shadow:0 10px 30px rgba(0,0,0,0.05);}
+.products .card{padding:0;overflow:hidden;}
+.products img{width:100%;height:250px;object-fit:cover;}
+.products h3{padding:20px;}
+.testimonials{background:#f8f8f8;padding:80px 60px;text-align:center;}
+.testimonial{max-width:600px;margin:20px auto;font-style:italic;color:#555;}
+.cta{background:#111;color:white;text-align:center;padding:80px 20px;}
+footer{background:#000;color:white;text-align:center;padding:30px;}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">
+<img src="hero.png">
+<span>FECOLPACK</span>
+</div>
+<nav>
+<a href="#">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h1>Aumenta tus ventas con empaques que impactan</h1>
+<p>Cajas de pizza resistentes, personalizadas y listas para tu marca</p>
+<a class="btn" href="https://wa.me/573125114643">Cotiza ahora por WhatsApp</a>
+</div>
+</section>
+
+<section id="productos" class="section products">
+<h2>Nuestros Productos</h2>
+<div class="grid">
+<div class="card"><img src="producto2.png"><h3>Cajas de Pizza</h3></div>
+<div class="card"><img src="producto3.png"><h3>Diferentes Tamaños</h3></div>
+<div class="card"><img src="galeria1.jpg"><h3>Alta Resistencia</h3></div>
+</div>
+</section>
+
+<section class="testimonials">
+<h2>Lo que dicen nuestros clientes</h2>
+<p class="testimonial">"Excelente calidad y presentación, nuestros clientes lo notan."</p>
+<p class="testimonial">"Muy buenos precios y entrega rápida."</p>
+</section>
+
+<section class="cta">
+<h2>Solicita tu cotización hoy mismo</h2>
+<a class="btn" href="https://wa.me/573125114643">Hablar por WhatsApp</a>
+</section>
+
+<section id="contacto" class="section">
+<h2>Contacto</h2>
+<p>WhatsApp: 3125114643</p>
+<p>Email: contacto@fecolpack.com</p>
+</section>
+
+<a class="whatsapp-float" href="https://wa.me/573125114643">WhatsApp</a>
+
+<footer>
+<p>© 2026 FECOLPACK</p>
+</footer>
+
+</body>
+</html>
