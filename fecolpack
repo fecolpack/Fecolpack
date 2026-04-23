@@ -4,86 +4,324 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FECOLPACK | Empaques que venden</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;}
-header{display:flex;justify-content:space-between;align-items:center;padding:15px 60px;background:#000;position:sticky;top:0;z-index:1000;}
-.logo{display:flex;align-items:center;gap:10px;}
-.logo img{height:45px;}
-.logo span{color:#ff5a3c;font-weight:700;font-size:20px;}
-nav a{margin:0 15px;text-decoration:none;color:white;font-weight:500;}
-.hero{height:95vh;background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('producto1.png') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:20px;}
-.hero h1{font-size:58px;font-weight:700;max-width:900px;}
-.hero p{font-size:22px;margin-top:20px;color:#ddd;}
-.btn{background:#ff5a3c;color:white;padding:16px 32px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:30px;font-weight:600;font-size:18px;}
-.whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
-.section{padding:80px 60px;max-width:1200px;margin:auto;}
-.section h2{font-size:36px;margin-bottom:20px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:40px;}
-.card{padding:30px;border-radius:10px;background:white;box-shadow:0 10px 30px rgba(0,0,0,0.05);}
-.products .card{padding:0;overflow:hidden;}
-.products img{width:100%;height:250px;object-fit:cover;}
-.products h3{padding:20px;}
-.testimonials{background:#f8f8f8;padding:80px 60px;text-align:center;}
-.testimonial{max-width:600px;margin:20px auto;font-style:italic;color:#555;}
-.cta{background:#111;color:white;text-align:center;padding:80px 20px;}
-footer{background:#000;color:white;text-align:center;padding:30px;}
+
+/* HEADER */
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 60px;background:#111;position:sticky;top:0;z-index:1000;}
+.logo-w{display:flex;align-items:center;gap:10px;}
+.logo-icon{width:36px;height:36px;background:#ff4f2b;border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.logo-icon svg{width:20px;height:20px;fill:white;}
+.logo-text{color:#fff;font-weight:500;font-size:17px;letter-spacing:0.5px;}
+.logo-text span{color:#ff4f2b;}
+nav{display:flex;align-items:center;gap:28px;}
+nav a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:400;transition:color 0.2s;}
+nav a:hover{color:#fff;}
+.nav-cta{background:#ff4f2b;color:#fff !important;padding:8px 18px;border-radius:6px;font-size:14px;}
+
+/* HERO */
+.hero{position:relative;height:95vh;min-height:560px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:#111;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:0.45;}
+.hero-content{position:relative;z-index:2;padding:20px;}
+.hero-badge{display:inline-block;background:rgba(255,79,43,0.2);color:#ff7055;border:0.5px solid rgba(255,79,43,0.4);padding:5px 16px;border-radius:20px;font-size:12px;margin-bottom:24px;}
+.hero h1{font-size:52px;font-weight:600;color:#fff;max-width:750px;margin:0 auto;line-height:1.15;}
+.hero h1 span{color:#ff4f2b;}
+.hero p{font-size:18px;color:rgba(255,255,255,0.65);margin:20px auto 36px;max-width:520px;line-height:1.7;}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:#ff4f2b;color:#fff;padding:14px 30px;border-radius:8px;text-decoration:none;font-size:15px;font-weight:600;transition:opacity 0.2s;}
+.btn-primary:hover{opacity:0.88;}
+.btn-secondary{background:rgba(255,255,255,0.1);color:#fff;padding:14px 30px;border-radius:8px;text-decoration:none;font-size:15px;border:0.5px solid rgba(255,255,255,0.25);transition:background 0.2s;}
+.btn-secondary:hover{background:rgba(255,255,255,0.18);}
+.hero-stats{display:flex;gap:48px;justify-content:center;margin-top:56px;padding-top:40px;border-top:0.5px solid rgba(255,255,255,0.15);}
+.stat-n{font-size:30px;font-weight:600;color:#fff;}
+.stat-l{font-size:13px;color:rgba(255,255,255,0.5);margin-top:5px;}
+
+/* SECCIONES */
+.section{padding:72px 60px;max-width:1200px;margin:0 auto;}
+.sec-label{font-size:12px;color:#ff4f2b;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;}
+.sec-h{font-size:32px;font-weight:600;color:#1a1a1a;}
+.sec-sub{font-size:15px;color:#666;margin-top:12px;line-height:1.7;max-width:540px;}
+
+/* CARACTERÍSTICAS */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:44px;}
+.feat-card{background:#f9f9f9;border:0.5px solid #eee;border-radius:12px;padding:28px;}
+.feat-icon{width:44px;height:44px;background:rgba(255,79,43,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.feat-icon svg{width:22px;height:22px;stroke:#ff4f2b;fill:none;stroke-width:2;}
+.feat-title{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:8px;}
+.feat-desc{font-size:13px;color:#666;line-height:1.6;}
+
+/* PRODUCTOS */
+.products-wrap{background:#f4f4f4;padding:72px 0;}
+.products-inner{max-width:1200px;margin:0 auto;padding:0 60px;}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:44px;}
+.prod-card{background:#fff;border:0.5px solid #e5e5e5;border-radius:12px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;}
+.prod-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.1);}
+.prod-img{height:220px;overflow:hidden;background:#f0f0f0;}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s;}
+.prod-card:hover .prod-img img{transform:scale(1.04);}
+.prod-info{padding:22px;}
+.prod-tag{display:inline-block;background:rgba(255,79,43,0.1);color:#ff4f2b;font-size:11px;padding:3px 10px;border-radius:20px;margin-bottom:10px;}
+.prod-name{font-size:16px;font-weight:600;color:#1a1a1a;}
+.prod-desc{font-size:13px;color:#666;margin-top:6px;line-height:1.5;}
+
+/* TESTIMONIOS */
+.testimonials-wrap{padding:72px 60px;max-width:1200px;margin:0 auto;}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:44px;}
+.test-card{background:#fff;border:0.5px solid #e5e5e5;border-radius:12px;padding:28px;}
+.stars{color:#ff4f2b;font-size:15px;margin-bottom:14px;}
+.test-text{font-size:14px;color:#555;line-height:1.75;font-style:italic;}
+.test-author{margin-top:18px;font-size:13px;font-weight:600;color:#1a1a1a;}
+.test-role{font-size:12px;color:#888;margin-top:2px;}
+
+/* CTA */
+.cta-wrap{background:#111;padding:80px 60px;text-align:center;}
+.cta-wrap h2{font-size:36px;font-weight:600;color:#fff;max-width:520px;margin:0 auto;}
+.cta-wrap p{font-size:15px;color:rgba(255,255,255,0.5);margin:16px auto 36px;max-width:420px;line-height:1.7;}
+
+/* CONTACTO */
+.contact-wrap{padding:72px 60px;max-width:1200px;margin:0 auto;}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:44px;}
+.contact-card{background:#f9f9f9;border:0.5px solid #eee;border-radius:12px;padding:26px;}
+.contact-label{font-size:12px;color:#888;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;}
+.contact-val{font-size:15px;font-weight:500;color:#1a1a1a;}
+
+/* FOOTER */
+footer{background:#000;padding:28px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:14px;color:rgba(255,255,255,0.6);font-weight:500;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);}
+
+/* BOTÓN FLOTANTE WHATSAPP */
+.wa-float{
+  position:fixed;
+  bottom:28px;
+  right:28px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 22px;
+  border-radius:50px;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  box-shadow:0 6px 20px rgba(37,211,102,0.4);
+  z-index:9999;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,0.5);}
+.wa-float svg{width:22px;height:22px;fill:#fff;flex-shrink:0;}
+.wa-pulse{width:9px;height:9px;background:#fff;border-radius:50%;animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.7);}}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  header{padding:14px 20px;}
+  nav{display:none;}
+  .hero h1{font-size:32px;}
+  .hero-stats{gap:20px;flex-wrap:wrap;}
+  .section,.testimonials-wrap,.contact-wrap{padding:48px 20px;}
+  .products-inner{padding:0 20px;}
+  .cta-wrap{padding:60px 20px;}
+  footer{padding:24px 20px;flex-direction:column;text-align:center;}
+}
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
-<div class="logo">
-<img src="hero.png">
-<span>FECOLPACK</span>
-</div>
-<nav>
-<a href="#">Inicio</a>
-<a href="#productos">Productos</a>
-<a href="#contacto">Contacto</a>
-</nav>
+  <div class="logo-w">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </div>
+    <span class="logo-text">FECOL<span>PACK</span></span>
+  </div>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/573125114643" class="nav-cta">Cotizar ahora</a>
+  </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<div>
-<h1>Aumenta tus ventas con empaques que impactan</h1>
-<p>Cajas de pizza resistentes, personalizadas y listas para tu marca</p>
-<a class="btn" href="https://wa.me/573125114643">Cotiza ahora por WhatsApp</a>
+  <div class="hero-bg">
+    <img src="producto1.png" alt="Cajas FECOLPACK">
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">Empaques que venden</div>
+    <h1>Cajas que hacen crecer <span>tu marca</span></h1>
+    <p>Fabricamos empaques de pizza personalizados, resistentes y listos para destacar tu negocio.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://wa.me/573125114643">Cotiza por WhatsApp</a>
+      <a class="btn-secondary" href="#productos">Ver productos</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-n">100%</div><div class="stat-l">Personalizable</div></div>
+      <div><div class="stat-n">Alta</div><div class="stat-l">Resistencia</div></div>
+      <div><div class="stat-n">Rápida</div><div class="stat-l">Entrega</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ ELEGIRNOS -->
+<div class="section">
+  <div class="sec-label">Por qué elegirnos</div>
+  <div class="sec-h">Empaques diseñados para tu negocio</div>
+  <div class="sec-sub">Fabricamos con materiales de alta calidad para que tu producto llegue perfecto a tus clientes.</div>
+  <div class="features-grid">
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <div class="feat-title">Personalización total</div>
+      <div class="feat-desc">Tu logo, colores y diseño en cada caja.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <div class="feat-title">Alta calidad</div>
+      <div class="feat-desc">Materiales resistentes que protegen tu producto.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+      <div class="feat-title">Entrega rápida</div>
+      <div class="feat-desc">Producción y envío en tiempos competitivos.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8v2m0 8v2"/><circle cx="12" cy="12" r="10"/></svg></div>
+      <div class="feat-title">Precios justos</div>
+      <div class="feat-desc">Cotización sin compromiso y precios al por mayor.</div>
+    </div>
+  </div>
 </div>
-</section>
 
-<section id="productos" class="section products">
-<h2>Nuestros Productos</h2>
-<div class="grid">
-<div class="card"><img src="producto2.png"><h3>Cajas de Pizza</h3></div>
-<div class="card"><img src="producto3.png"><h3>Diferentes Tamaños</h3></div>
-<div class="card"><img src="galeria1.jpg"><h3>Alta Resistencia</h3></div>
+<!-- PRODUCTOS -->
+<div class="products-wrap" id="productos">
+  <div class="products-inner">
+    <div class="sec-label">Catálogo</div>
+    <div class="sec-h">Nuestros productos</div>
+    <div class="prod-grid">
+
+      <div class="prod-card">
+        <div class="prod-img"><img src="producto2.png" alt="Cajas de pizza personalizadas"></div>
+        <div class="prod-info">
+          <div class="prod-tag">Más vendido</div>
+          <div class="prod-name">Cajas de pizza personalizadas</div>
+          <div class="prod-desc">Diseño artístico con tu marca, resistentes y llamativas.</div>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img"><img src="producto3.png" alt="Cajas de alta resistencia"></div>
+        <div class="prod-info">
+          <div class="prod-tag">Alta resistencia</div>
+          <div class="prod-name">Cajas de alta resistencia</div>
+          <div class="prod-desc">Material corrugado de doble capa que conserva el calor.</div>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img"><img src="Imagen_de_WhatsApp_2023-05-18_a_las_13_24_3712.jpg" alt="Diferentes tamaños"></div>
+        <div class="prod-info">
+          <div class="prod-tag">Variedad</div>
+          <div class="prod-name">Diferentes tamaños</div>
+          <div class="prod-desc">Disponibles en 22x22, 30x30, 40x40 y 50x50 cm.</div>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img"><img src="FOTOS-04.png" alt="Colección completa"></div>
+        <div class="prod-info">
+          <div class="prod-tag">Premium</div>
+          <div class="prod-name">Colección completa</div>
+          <div class="prod-desc">Variedad de diseños y referencias para tu negocio.</div>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img"><img src="4_Mesa_de_trabajo_1.png" alt="Caja kraft abierta"></div>
+        <div class="prod-info">
+          <div class="prod-tag">Multiusos</div>
+          <div class="prod-name">Cajas kraft abiertas</div>
+          <div class="prod-desc">Ideales para empacar todo tipo de productos con elegancia.</div>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img"><img src="5_Mesa_de_trabajo_1.png" alt="Caja kraft cerrada"></div>
+        <div class="prod-info">
+          <div class="prod-tag">Kraft natural</div>
+          <div class="prod-name">Cajas kraft cerradas</div>
+          <div class="prod-desc">Acabado natural, resistente y listo para personalizar.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
-</section>
 
-<section class="testimonials">
-<h2>Lo que dicen nuestros clientes</h2>
-<p class="testimonial">"Excelente calidad y presentación, nuestros clientes lo notan."</p>
-<p class="testimonial">"Muy buenos precios y entrega rápida."</p>
-</section>
+<!-- TESTIMONIOS -->
+<div class="testimonials-wrap">
+  <div class="sec-label">Testimonios</div>
+  <div class="sec-h">Lo que dicen nuestros clientes</div>
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <div class="test-text">"Excelente calidad y presentación, nuestros clientes lo notan desde que reciben la caja."</div>
+      <div class="test-author">Cliente satisfecho</div>
+      <div class="test-role">Pizzería en Bogotá</div>
+    </div>
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <div class="test-text">"Muy buenos precios y entrega rápida. Llevamos 2 años trabajando con FECOLPACK."</div>
+      <div class="test-author">Cliente fiel</div>
+      <div class="test-role">Cadena de restaurantes</div>
+    </div>
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <div class="test-text">"La personalización es impecable. Nuestro logo quedó perfecto en cada caja."</div>
+      <div class="test-author">Emprendedor</div>
+      <div class="test-role">Marca propia</div>
+    </div>
+  </div>
+</div>
 
-<section class="cta">
-<h2>Solicita tu cotización hoy mismo</h2>
-<a class="btn" href="https://wa.me/573125114643">Hablar por WhatsApp</a>
-</section>
+<!-- CTA -->
+<div class="cta-wrap">
+  <h2>¿Listo para mejorar tus empaques?</h2>
+  <p>Solicita tu cotización hoy mismo y te respondemos en minutos.</p>
+  <a class="btn-primary" href="https://wa.me/573125114643">Hablar por WhatsApp</a>
+</div>
 
-<section id="contacto" class="section">
-<h2>Contacto</h2>
-<p>WhatsApp: 3125114643</p>
-<p>Email: contacto@fecolpack.com</p>
-</section>
+<!-- CONTACTO -->
+<div class="contact-wrap" id="contacto">
+  <div class="sec-label">Contacto</div>
+  <div class="sec-h">Estamos para ayudarte</div>
+  <div class="contact-grid">
+    <div class="contact-card"><div class="contact-label">WhatsApp</div><div class="contact-val">3125114643</div></div>
+    <div class="contact-card"><div class="contact-label">Email</div><div class="contact-val">contacto@fecolpack.com</div></div>
+    <div class="contact-card"><div class="contact-label">Horario</div><div class="contact-val">Lun – Vie, 8am – 6pm</div></div>
+  </div>
+</div>
 
-<a class="whatsapp-float" href="https://wa.me/573125114643">WhatsApp</a>
-
+<!-- FOOTER -->
 <footer>
-<p>© 2026 FECOLPACK</p>
+  <span class="footer-brand">FECOLPACK</span>
+  <span class="footer-copy">© 2026 FECOLPACK. Todos los derechos reservados.</span>
 </footer>
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a class="wa-float" href="https://wa.me/573125114643" target="_blank">
+  <svg viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.985-1.407A9.945 9.945 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+  </svg>
+  WhatsApp
+  <div class="wa-pulse"></div>
+</a>
 
 </body>
 </html>
